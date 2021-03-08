@@ -38,9 +38,9 @@ stacksize 2621440
 flush
 auth strong
 
-users thuongtin:CL:thuongtin
+users melih:CL:melih
 auth strong
-allow thuongtin
+allow melih
 $(awk -F "/" '{print "proxy -6 -n -a -p" $4 " -i" $3 " -e"$5"\n"}' ${WORKDATA})
 flush
 EOF
@@ -48,7 +48,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "thuongtin/thuongtin/$IP4/$port/$(gen64 $IP6)"
+        echo "melih/melih/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
